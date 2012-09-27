@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+ <RadioGroup xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:background="@drawable/back">    >
+    <RadioButton android:id="@+id/download"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/download"
+        android:onClick="onRadioButtonClicked"
+        android:checked="true"/>"
+    <RadioButton android:id="@+id/play"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/play"
+        android:onClick="onRadioButtonClicked"/>
+</RadioGroup>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text=" " >
+    </TextView>
+
+
+    <CheckBox
+        android:id="@+id/wifi"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/wifi"
+        android:checked="true"
+        android:paddingLeft="35dp" 
+        android:background="@drawable/back"/>
+
+	    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text=" " >
+   	    </TextView>
+		<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+		    android:layout_width="match_parent"
+		    android:layout_height="wrap_content"
+		    android:orientation="vertical" 
+		    android:padding="5dp"
+		    android:background="@drawable/back">
+ 		    <TextView
+		        android:id="@+id/currentDirTitle"
+		        android:layout_width="match_parent"
+		        android:layout_height="wrap_content"
+		        android:textStyle="bold"
+		        android:text="@string/downloaddir" >
+		    </TextView>       	    
+		  <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+		    android:layout_width="match_parent"
+		    android:layout_height="wrap_content">
+		    <TextView
+		        android:id="@+id/currentDir"
+		        android:layout_width="wrap_content"
+		        android:layout_height="wrap_content"
+		        android:text="" >
+		    </TextView>  
+		    <Button
+		         android:id="@+id/dirButton"
+		         android:layout_width="wrap_content"
+		         android:layout_height="wrap_content"
+		         android:onClick="onButtonClicked"
+		         android:text="@string/change" />     
+		  </LinearLayout>
+  		</LinearLayout>
+  	    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text=" " >
+   	    </TextView>
+   	    
+ <LinearLayout
+     android:layout_width="match_parent"
+     android:layout_height="wrap_content" >
+
+     <Button
+         android:id="@+id/cancel"
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         android:onClick="onButtonClicked"
+         android:text="@string/cancel" />
+
+     <Button
+         android:id="@+id/ok"
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         android:onClick="onButtonClicked"
+         android:text="@string/ok" />
+
+ </LinearLayout>
+
+</LinearLayout>

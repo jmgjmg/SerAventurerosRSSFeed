@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="hello">Hello World, SerAventureros!</string>
+    <string name="app_name">Ser Aventureros Podcast</string>
+	<string name="play">Play</string>
+	<string name="stop">Stop</string>
+	<string name="download">Download</string>
+	<string name="update">Reload RSS feed</string>
+	<string name="wifi">Only WiFi</string>
+	<string name="any">Any network</string>
+	<string name="audioplayer">Background Audio Player</string>	
+	<string name="rss_feed">http://www.ivoox.com/podcast-ser-aventureros_fg_f148045_filtro_1.xml</string>	 
+<!--<string name="rss_feed">http://www.ivoox.com/podcast-mundo-today_fg_f125355_filtro_1.xml</string>	-->
+	<string name="ok">OK</string>
+	<string name="cancel">Cancel</string>
+	<string name="config">Configuration</string>
+	<string name="yes">Yes</string>
+	<string name="no">No</string>
+	<string name="about">About</string>
+	<string name="downloaddir">Download directory</string>
+	<string name="prefs_file">PrefsFile</string>
+	<string name="change">Change</string>
+</resources>
