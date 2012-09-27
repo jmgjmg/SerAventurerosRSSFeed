@@ -20,4 +20,6 @@
 	<string name="downloaddir">Download directory</string>
 	<string name="prefs_file">PrefsFile</string>
 	<string name="change">Change</string>
+	<string name="currentFeed">Current RSS Feed</string>
+	<string name="reset">Reset</string>
 </resources>

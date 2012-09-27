@@ -45,6 +45,7 @@ public class SerAventurerosRSSFeed extends ListActivity {
   private List<RSSParser.Entry> entryList = new ArrayList<RSSParser.Entry>();
   private ArrayAdapter<RSSParser.Entry> adapter;
   private String currentDir;
+  private String currentFeed;
   
   
   /** Called when the activity is first created. */
@@ -60,6 +61,7 @@ public class SerAventurerosRSSFeed extends ListActivity {
     isDownloadSelected = settings.getBoolean(this.getString(R.string.download), false);
     isWifiSelected = settings.getBoolean(this.getString(R.string.wifi), true);
     currentDir = settings.getString(this.getString(R.string.downloaddir), Environment.getExternalStorageDirectory().getPath());
+    currentFeed = settings.getString(this.getString(R.string.currentFeed), this.getString(R.string.rss_feed));
     readWebpage();
   }
 
@@ -208,6 +210,7 @@ public class SerAventurerosRSSFeed extends ListActivity {
         	  intent.putExtra(this.getString(R.string.wifi), isWifiSelected); 
         	  intent.putExtra(this.getString(R.string.download), isDownloadSelected); 
         	  intent.putExtra(this.getString(R.string.downloaddir), currentDir); 
+        	  intent.putExtra(this.getString(R.string.currentFeed), currentFeed); 
         	  startActivityForResult(intent, CONFIG_CALL);
         	  return true;
         
@@ -251,11 +254,14 @@ public class SerAventurerosRSSFeed extends ListActivity {
 	            	isDownloadSelected = data.getBooleanExtra(this.getString(R.string.download),isDownloadSelected);
 	            	isWifiSelected= data.getBooleanExtra(this.getString(R.string.wifi),isWifiSelected);
 	            	currentDir = data.getStringExtra(this.getString(R.string.downloaddir));
+	            	String currentFeed2 = data.getStringExtra(this.getString(R.string.currentFeed));
+	            	if (! currentFeed2.equalsIgnoreCase(currentFeed)) readWebpage();
 	                SharedPreferences settings = getSharedPreferences(this.getString(R.string.prefs_file), 0);
 	                SharedPreferences.Editor editor = settings.edit();
 	                editor.putBoolean(this.getString(R.string.download),isDownloadSelected);
 	                editor.putBoolean(this.getString(R.string.wifi),isWifiSelected);
 	                editor.putString(this.getString(R.string.downloaddir),currentDir);
+	                editor.putString(this.getString(R.string.currentFeed),currentFeed);
 	                editor.commit();	            	
 	            }
 	        	
@@ -301,6 +307,6 @@ public class SerAventurerosRSSFeed extends ListActivity {
   public void readWebpage() {
 	adapter.clear();
     DownloadWebPageTask task = new DownloadWebPageTask();
-    task.execute(new String[] { this.getString(R.string.rss_feed) });
+    task.execute(new String[] { currentFeed });
   }
 } 
