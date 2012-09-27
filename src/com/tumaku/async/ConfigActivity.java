@@ -13,6 +13,7 @@ import android.widget.TextView;
 
 public class ConfigActivity extends Activity {
 	  public static final int DIR_CALL = 2;
+	  public static final int FEED_CALL = 3;
 	  private String currentDir;
 	  private String currentFeed;
 	  private TextView dirTextView;
@@ -62,6 +63,9 @@ public class ConfigActivity extends Activity {
 			     else rssTextView.setText(currentFeed);
 	        	 return;
 			case R.id.rssButton:
+	        	 Intent intentRSS = new Intent(this, com.tumaku.async.InputFeedActivity.class);
+	        	 intentRSS.putExtra(this.getString(R.string.currentFeed), currentFeed); 
+	        	 startActivityForResult(intentRSS, FEED_CALL);				
 	        	 return;	        	 
 			case R.id.cancel:
 				finish();
@@ -85,12 +89,22 @@ public class ConfigActivity extends Activity {
 	        case DIR_CALL:
 	            if (resultCode == RESULT_CANCELED){
 	            	//DO NOTHING
- 	            } 
+		            } 
 	            else {
 	            	currentDir = data.getStringExtra(this.getString(R.string.downloaddir));  
 	        	    int dirLength=currentDir.length();
 	        	    if (dirLength>30) dirTextView.setText("..."+currentDir.substring(dirLength-27));
 	        	    else dirTextView.setText(currentDir);	            }
+	        	return;
+        	case FEED_CALL:
+	            if (resultCode == RESULT_CANCELED){
+	            	//DO NOTHING
+		            } 
+	            else {
+	            	currentFeed = data.getStringExtra(this.getString(R.string.currentFeed));  
+	        	    int rssLength=currentFeed.length();
+	        	    if (rssLength>30) rssTextView.setText("..."+currentFeed.substring(rssLength-37));
+	        	    else rssTextView.setText(currentFeed);	            }
 	        	return;
 	        default:
 	            break;

@@ -30,8 +30,8 @@ public final class R {
         public static final int download=0x7f060002;
         public static final int ok=0x7f06000d;
         public static final int play=0x7f060003;
-        public static final int resetButton=0x7f060009;
-        public static final int rssButton=0x7f06000a;
+        public static final int resetButton=0x7f06000a;
+        public static final int rssButton=0x7f060009;
         public static final int update=0x7f06000f;
         public static final int wifi=0x7f060004;
     }
@@ -39,7 +39,8 @@ public final class R {
         public static final int audioscreen=0x7f030000;
         public static final int config=0x7f030001;
         public static final int directory=0x7f030002;
-        public static final int main=0x7f030003;
+        public static final int inputfeed=0x7f030003;
+        public static final int main=0x7f030004;
     }
     public static final class menu {
         public static final int main_menu=0x7f050000;

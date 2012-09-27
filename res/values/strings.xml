@@ -9,8 +9,8 @@
 	<string name="wifi">Only WiFi</string>
 	<string name="any">Any network</string>
 	<string name="audioplayer">Background Audio Player</string>	
-	<string name="rss_feed">http://www.ivoox.com/podcast-ser-aventureros_fg_f148045_filtro_1.xml</string>	 
-<!--<string name="rss_feed">http://www.ivoox.com/podcast-mundo-today_fg_f125355_filtro_1.xml</string>	-->
+	<!-- <string name="rss_feed">http://www.ivoox.com/podcast-ser-aventureros_fg_f148045_filtro_1.xml</string> -->	 
+	<string name="rss_feed">http://www.ivoox.com/podcast-mundo-today_fg_f125355_filtro_1.xml</string>	
 	<string name="ok">OK</string>
 	<string name="cancel">Cancel</string>
 	<string name="config">Configuration</string>

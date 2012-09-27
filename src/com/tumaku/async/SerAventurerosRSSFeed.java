@@ -255,7 +255,10 @@ public class SerAventurerosRSSFeed extends ListActivity {
 	            	isWifiSelected= data.getBooleanExtra(this.getString(R.string.wifi),isWifiSelected);
 	            	currentDir = data.getStringExtra(this.getString(R.string.downloaddir));
 	            	String currentFeed2 = data.getStringExtra(this.getString(R.string.currentFeed));
-	            	if (! currentFeed2.equalsIgnoreCase(currentFeed)) readWebpage();
+	            	if (! currentFeed2.equalsIgnoreCase(currentFeed)) {
+	            		currentFeed=currentFeed2;
+	            		readWebpage();
+	            	}
 	                SharedPreferences settings = getSharedPreferences(this.getString(R.string.prefs_file), 0);
 	                SharedPreferences.Editor editor = settings.edit();
 	                editor.putBoolean(this.getString(R.string.download),isDownloadSelected);
